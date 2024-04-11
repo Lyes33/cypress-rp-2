@@ -10,7 +10,22 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('connexion', (username, password) => { 
+    cy.get('[data-test="username"]').type(username)
+    cy.get('[data-test="password"]').type(password)
+    cy.get('[data-test="login-button"]').should('be.enabled').click()
+
+ })
+
+ Cypress.Commands.add('addToCart', (itemName)=>{
+    cy.contains(itemName).click()
+    cy.get('[data-test="add-to-cart"]').click()
+ })
+
+Cypress.Commands.add('addToBasket', (item)=>{
+    cy.get(`[data-test="add-to-cart-sauce-${item}"]`).click()
+
+})
 //
 //
 // -- This is a child command --
