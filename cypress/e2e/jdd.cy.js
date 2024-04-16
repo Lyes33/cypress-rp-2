@@ -6,7 +6,7 @@ beforeEach(()=>{
 })
   it('should add one product',()=>{
    cy.connexion(data.username, data.password)
-   cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+   cy.get('[data-test="add-to-cart-sauce-labs-backpackkk"]').click()
 
   })
 
